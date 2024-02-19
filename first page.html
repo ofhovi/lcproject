@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/styles.css">
+      <!-- <link rel="stylesheet" href="css/nav-bar.css"> -->
+      <title>Subscribe to Justiks</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.typekit.net/bzv4zqw.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="images/logo.png">
+      <script src="js/logo-anim.js"></script>
+    </head>
+    <body>
+      <div class="nav-bar">
+        <div class="empty-space"></div>
+        <a href="home.html" class="main-nav-logo"><img  alt="Logo" class="logo-image" id="img1" src="images/looogo.png" onmouseover="changeImg1()" onmouseout="changeImg2()"></a>
+        <div class="empty-space2"></div>
+        <div class="nav-bar-texts">
+          <div class="nav-bar-text">
+            <a href="home.html">Home</a>
+            <a href="first page.html" class="active-tab">Email</a>
+            <a href="contact.html">Relax</a>
+            <a href="about.html">Links</a>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <form class="emailBox" id="emailboxx">
+          <label class="emailbox-text">Enter your E-mail address to subscribe for our newsletter:</label><br>
+          <div class="input-email">
+            <input id="emailAddress" type="email" placeholder="E-mail" class="input-emaill">
+            <button type="button" id="ValidateEmailButton" class="button-apply" onclick="insertRecord()">Submit</button>
+          </div>
+          <!-- <button type="button" id="ValidateEmailButton" class="button-apply" onclick="insertRecord()">Submit</button>  -->
+        </form>
+      </div>
+      <footer class="footers">
+        <h6 class="footer-text">Justiks 2023</h6>
+      </footer>
+    </body>
+</html>
+
+
+<script src="js/test.js"></script>
+<script src=https://www.gstatic.com/firebasejs/8.0.0/firebase.js></script>
+<script src="js/button-email-add.js"></script>
