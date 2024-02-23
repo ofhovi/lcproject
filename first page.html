@@ -28,12 +28,17 @@
         </div>
       </div>
       <div class="login-container">
-        <div class="loginform">
-          <p class="logintitle">Log in to your account.</p>
+        <div class="loginform login-form">
+          <p class="logintitle">Log in to your account</p>
           <!-- <label class="logintext">Enter your  email address</label> -->
           <input id="emailAddress" type="email" placeholder="E-mail" class="input-emailll">
           <!-- <label class="logintext">Enter your password</label> -->
-          <input id="password" type="password" placeholder="Password" class="input-emailll">
+          <div class="input-password">
+            <input id="password" type="password" placeholder="Password" class="input-emailll" />
+            <div class="show-password-button">
+              <button id="showPasswordButton" class="button-pass"></button>
+            </div>
+          </div>
           <button onclick="validateForm()" class="button-apply">Submit</button>
         </div>
       </div>
@@ -51,10 +56,25 @@
       <footer class="footers">
         <h6 class="footer-text">Justiks 2023</h6>
       </footer>
+      <script>
+        // JavaScript code to toggle password visibility
+        const showPasswordButton = document.getElementById("showPasswordButton");
+        const passwordInput = document.getElementById("password");
+  
+        showPasswordButton.addEventListener("click", () => {
+          if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            showPasswordButton.style.backgroundImage = "url('/images/eye.png')";
+          } else {
+            passwordInput.type = "password";
+            showPasswordButton.style.backgroundImage = "url('/images/eye1.png')";
+          }
+        });
+      </script>
+      <script src="js/test.js"></script>
+      <script src=https://www.gstatic.com/firebasejs/8.0.0/firebase.js></script>
+      <script src="js/button-email-add.js"></script>
     </body>
 </html>
 
 
-<script src="js/test.js"></script>
-<script src=https://www.gstatic.com/firebasejs/8.0.0/firebase.js></script>
-<script src="js/button-email-add.js"></script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- head content here -->
+    <style>
+    .input-password {
+        position: relative;
+    }
+    .show-password-button {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .button-pass {
+        background:url(images/eye1.png) no-repeat;
+        cursor:pointer;
+        border:none;
+        width: 50px;
+        height: 50px;
+        background-size: 50%;
+      }</style>
+  </head>
+  <body>
+    <!-- body content here -->
+    <div class="login-container">
+      <div class="loginform login-form">
+        <p class="logintitle">Log in to your account</p>
+        <input id="emailAddress" type="email" placeholder="E-mail" class="input-emailll" />
+        <div class="input-password">
+          <input id="password" type="password" placeholder="Password" class="input-emailll" />
+          <div class="show-password-button">
+            <button id="showPasswordButton" class="button-apply"></button>
+          </div>
+        </div>
+        <button onclick="validateForm()" class="button-apply">Submit</button>
+      </div>
+    </div>
+    <!-- footer content here -->
+    <script src="js/test.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+    <script src="js/button-email-add.js"></script>
+    <script>
+      // JavaScript code to toggle password visibility
+      const showPasswordButton = document.getElementById("showPasswordButton");
+      const passwordInput = document.getElementById("password");
+
+      showPasswordButton.addEventListener("click", () => {
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          showPasswordButton.textContent = "Hide password";
+        } else {
+          passwordInput.type = "password";
+          showPasswordButton.textContent = "Show password";
+        }
+      });
+    </script>
+  </body>
+</html>
