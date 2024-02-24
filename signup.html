@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/styles.css">
+      <!-- <link rel="stylesheet" href="css/nav-bar.css"> -->
+      <title>Subscribe to Justiks</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.typekit.net/bzv4zqw.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="images/logo.png">
+      <script src="js/logo-anim.js"></script>
+      <script src="js/signup.js" type="module"></script>
+    </head>
+    <body>
+      <div class="nav-bar">
+        <div class="empty-space"></div>
+        <a href="home.html" class="main-nav-logo"><img  alt="Logo" class="logo-image" id="img1" src="images/looogo.png" onmouseover="changeImg1()" onmouseout="changeImg2()"></a>
+        <div class="empty-space2"></div>
+        <div class="nav-bar-texts">
+          <div class="nav-bar-text">
+            <a href="home.html">Home</a>
+            <a href="signup.html" class="active-tab">Login</a>
+            <a href="contact.html">Relax</a>
+            <a href="about.html">Links</a>
+          </div>
+        </div>
+      </div>
+      <div class="login-container">
+        <form id="MainForm" class="loginform login-form">
+          <p class="logintitle">Create an account</p>
+          <!-- <label class="logintext">Enter your  email address</label> -->
+          <input id="firstName" type="text" placeholder="First Name" class="input-emailll">
+          <input id="lastName" type="text" placeholder="Last Name" class="input-emailll">
+          <input id="emailAddress" type="email" placeholder="E-mail" class="input-emailll">
+          <!-- <label class="logintext">Enter your password</label> -->
+          <div class="input-password">
+            <input id="password" type="password" placeholder="Password" class="input-emailll" />
+            <div class="show-password-button">
+              <button id="showPasswordButton" type="button" class="button-pass"></button>
+            </div>
+            </div>
+            <div class="smalltextlogin">
+                <p class="logintext1">Already a user?<a  class="logintext1" href="login.html"><u>Sign in</u></a></p>
+                
+            </div>
+            <button id="buttonsubmit" type="submit" class="button-apply">Submit</button>
+            <!-- <button onclick="validateForm()" type="submit" class="button-apply">Submit</button> -->
+          </div>
+        </form>
+      </div>
+
+      <!-- <div class="main">
+        <form class="emailBox" id="emailboxx">
+          <label class="emailbox-text">Enter your E-mail address to subscribe for our newsletter:</label><br>
+          <div class="input-email">
+            <input id="emailAddress" type="email" placeholder="E-mail" class="input-emaill">
+            <button type="button" id="ValidateEmailButton" class="button-apply" onclick="insertRecord()">Submit</button>
+          </div> -->
+          <!-- <button type="button" id="ValidateEmailButton" class="button-apply" onclick="insertRecord()">Submit</button>  -->
+        <!-- </form>
+      </div> -->
+      <footer class="footers">
+        <h6 class="footer-text">Justiks 2023</h6>
+      </footer>
+        <script>
+            // JavaScript code to toggle password visibility
+            const showPasswordButton = document.getElementById("showPasswordButton");
+            const passwordInput = document.getElementById("password");
+    
+            showPasswordButton.addEventListener("click", () => {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                showPasswordButton.style.backgroundImage = "url('/images/eye.png')";
+            } else {
+                passwordInput.type = "password";
+                showPasswordButton.style.backgroundImage = "url('/images/eye1.png')";
+            }
+            });
+      </script>
+      <script src="js/test.js"></script>
+        <!-- <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+            // import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+            import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+        
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+            apiKey: "AIzaSyDw09HU3ksqHjukBRP26UZl8w9nvm553sM",
+            authDomain: "lcproject-bae23.firebaseapp.com",
+            projectId: "lcproject-bae23",
+            storageBucket: "lcproject-bae23.appspot.com",
+            messagingSenderId: "211134649587",
+            appId: "1:211134649587:web:3ab21ba48b9f2f157d1386"
+            };
+        
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            // const db = getDatabase();
+            const auth = getAuth(app);
+
+            let EmailInp = document.getElementById('emailAddress');
+            let PassInp = document.getElementById('password');
+            let FnameInp = document.getElementById('firstName');
+            let LnameInp = document.getElementById('lastName');
+            let MainForm = document.getElementById('MainForm');
+
+            const buttonsubmit = document.getElementById('buttonsubmit');
+
+            let RegisterUser = evt => {
+                evt.preventDefault();
+
+
+                createUserWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
+                .then((credentials)=> {
+                    console.log(credentials);
+                })
+                .catch((error)=>{
+                    alert(error.message);
+                    console.log(error.code);
+                    console.log(error.message);
+                })
+            }
+
+            function validateForm() {
+                console.log("Button clicked")
+            }
+            
+        </script> -->
+    </body>
+</html>
+
+

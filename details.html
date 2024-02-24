@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="css/nav-bar.css"> -->
+    <title>About us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/bzv4zqw.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <script src="js/logo-anim.js"></script>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div class="empty-space"></div>
+      <a href="home.html" class="main-nav-logo"><img  alt="Logo" class="logo-image" id="img1" src="images/looogo.png" onmouseover="changeImg1()" onmouseout="changeImg2()"></a>
+      <div class="empty-space2"></div>
+      <div class="nav-bar-texts">
+        <div class="nav-bar-text">
+          <a href="home.html">Home</a>
+          <a href="login.html">Login</a>
+          <a href="contact.html">Relax</a>
+          <a href="about.html">Links</a>
+          <a type="button" id="signoutbutton">Sign Out</a>
+        </div>
+      </div>
+    </div>
+      <div class="main">
+        <h1 class="title-article title-new">Yes</h1>
+        <div class="videos-cont">
+            <p class="paragraph-article">Bruh</p>
+            <p class="paragraph-article" id="msg"></p>
+            <p class="paragraph-article" id="greet"></p>
+      </div>
+      <footer class="footers">
+        <h6 class="footer-text">Justiks 2023</h6>
+      </footer>
+
+      <script>
+        let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+        let MsgHead = document.getElementById('msg');
+        let GreetHead  = document.getElementById('greet');
+        let SignoutBtn  = document.getElementById('signoutbutton');
+
+        // MsgHead.innerText = `User with email "${UserCreds.email}" logged in`;
+        // GreetHead.innerText = `Welcome ${UserInfo.firstname + " " + UserInfo.lastname}`;
+
+        let Signout = ()=> {
+            sessionStorage.removeItem("user-creds");
+            sessionStorage.removeItem("user-info");
+            window.location.href='login.html';
+        }
+
+        let CheckCred = ()=>{
+            if (!sessionStorage.getItem("user-creds")) {
+                window.location.href = "login.html";
+            }
+
+                
+
+            else {
+                MsgHead.innerText = `User with email "${UserCreds.email}" logged in`;
+                GreetHead.innerText = `Welcome ${UserInfo.firstname + " " + UserInfo.lastname}`;
+            }
+        }
+
+        window.addEventListener( 'load', CheckCred);
+        SignoutBtn.addEventListener('click', Signout);
+      </script>
+    </body>
+</html>
+
+<script src="js/test.js"></script>

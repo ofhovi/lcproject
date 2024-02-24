@@ -12,6 +12,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" type="image/x-icon" href="images/logo.png">
       <script src="js/logo-anim.js"></script>
+      <script src="js/login.js" type="module"></script>
     </head>
     <body>
       <div class="nav-bar">
@@ -21,14 +22,14 @@
         <div class="nav-bar-texts">
           <div class="nav-bar-text">
             <a href="home.html">Home</a>
-            <a href="first page.html" class="active-tab">Login</a>
+            <a href="login.html" class="active-tab">Login</a>
             <a href="contact.html">Relax</a>
             <a href="about.html">Links</a>
           </div>
         </div>
       </div>
       <div class="login-container">
-        <div class="loginform login-form">
+        <form id="MainForm" class="loginform login-form">
           <p class="logintitle">Log in to your account</p>
           <!-- <label class="logintext">Enter your  email address</label> -->
           <input id="emailAddress" type="email" placeholder="E-mail" class="input-emailll">
@@ -36,12 +37,16 @@
           <div class="input-password">
             <input id="password" type="password" placeholder="Password" class="input-emailll" />
             <div class="show-password-button">
-              <button id="showPasswordButton" class="button-pass"></button>
+              <button id="showPasswordButton" type="button" class="button-pass"></button>
             </div>
           </div>
-          <button onclick="validateForm()" class="button-apply">Submit</button>
-        </div>
+          <div class="smalltextlogin">
+            <p class="logintext1">New here?<a  class="logintext1" href="signup.html"><u>Sign Up</u></a></p>
+            </div>
+            <button id="buttonsubmit" type="submit" class="button-apply">Submit</button>
+        </form>
       </div>
+      
 
       <!-- <div class="main">
         <form class="emailBox" id="emailboxx">
@@ -72,8 +77,6 @@
         });
       </script>
       <script src="js/test.js"></script>
-      <script src=https://www.gstatic.com/firebasejs/8.0.0/firebase.js></script>
-      <script src="js/button-email-add.js"></script>
     </body>
 </html>
 
