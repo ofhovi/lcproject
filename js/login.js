@@ -41,6 +41,8 @@
                             lastname: docSnap.data().lastname,
                         }))
                         sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                        sessionStorage.setItem("user-id", JSON.stringify(credentials.user.uid));
+                        // console.log(credentials.user.uid)
                         window.location.href="details.html";
                         }
                     })

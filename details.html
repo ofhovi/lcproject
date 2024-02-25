@@ -24,12 +24,12 @@
           <a href="login.html">Login</a>
           <a href="contact.html">Relax</a>
           <a href="about.html">Links</a>
-          <a type="button" id="signoutbutton">Sign Out</a>
+          <a type="button" id="signoutbutton" class="signoutbutton">Sign Out</a>
         </div>
       </div>
     </div>
       <div class="main">
-        <h1 class="title-article title-new">Yes</h1>
+        <h1 class="title-article title-new">Personal mood log</h1>
         <div class="videos-cont">
             <p class="paragraph-article">Bruh</p>
             <p class="paragraph-article" id="msg"></p>
@@ -42,6 +42,7 @@
       <script>
         let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
         let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+        let UserId = sessionStorage.getItem("user-id");
 
         let MsgHead = document.getElementById('msg');
         let GreetHead  = document.getElementById('greet');
@@ -53,6 +54,7 @@
         let Signout = ()=> {
             sessionStorage.removeItem("user-creds");
             sessionStorage.removeItem("user-info");
+            sessionStorage.removeItem("user-id")
             window.location.href='login.html';
         }
 
@@ -64,7 +66,7 @@
                 
 
             else {
-                MsgHead.innerText = `User with email "${UserCreds.email}" logged in`;
+                MsgHead.innerText = `User with email "${UserCreds.email}" and Id: ${UserId} logged in`;
                 GreetHead.innerText = `Welcome ${UserInfo.firstname + " " + UserInfo.lastname}`;
             }
         }

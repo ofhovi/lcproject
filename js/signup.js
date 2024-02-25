@@ -55,6 +55,21 @@
             
             MainForm.addEventListener( 'submit', RegisterUser )
 
+              
+    
+            //     var ref = doc(db, "UserAuthList", "5YZG2KCheuTZQ8vbEs9TzeQIRP73", "Mood Check", "25.02");
+            //     await setDoc(ref, {
+            //         Mood: "Good"
+            //     })
+
+            // .catch((error)=>{
+            //     alert(error.message);
+            //     console.log(error.code);
+            //     console.log(error.message);
+            // })
+              
 
 
+
+            
             
