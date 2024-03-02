@@ -207,7 +207,7 @@ body {
 .nav-bar-text {
   margin-top: auto;
   margin-bottom: auto; 
-  width: 110px;
+  /* width: 110px; */
   height: 80px;
   text-align: center;
   display: flex;
@@ -404,6 +404,7 @@ footer {
 .title-new {
   text-align: center;
   margin-bottom: 60px;
+  font-family: "brandon-grotesque", sans-serif;
 }
 
 .loginform {
@@ -530,7 +531,17 @@ footer {
 
 .signoutbutton {
   font-size: 25px;
-  width: 150px;
+  width: 180px;
+  /* margin-right: 30px;
+  margin-left: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border: 4px solid #1B365C;
+  border-radius: 40px;
+  font-family: "brandon-grotesque", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 25px; */
 }
 
  .barback {
@@ -571,6 +582,12 @@ footer {
 .moodbutton {
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 
@@ -578,6 +595,19 @@ footer {
   background: #F2F2F2;
   width: 80%;
   border-radius: 25px;
+}
+
+.choicetext {
+  text-align: center;
+  width: 250px;
+  margin-right: 20px;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.welcomecab {
+  display: flex;
+  align-items: flex-start;
 }
 
   @keyframes move1 {

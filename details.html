@@ -24,12 +24,18 @@
           <a href="login.html">Login</a>
           <a href="contact.html">Relax</a>
           <a href="about.html">Links</a>
+          <div class="empty-space2"></div>
+          <div class="empty-space2"></div>
           <a type="button" id="signoutbutton" class="signoutbutton">Sign Out</a>
         </div>
       </div>
     </div>
       <div class="main">
         <h1 class="title-article title-new">Personal mood log</h1>
+        <div class="welcomecab">
+          <p class="paragraph-article" id="greet"></p>
+          
+        </div>
         <div class="bar-container">
           <div class="barback">
             <div id="myBar" class="barfront"></div>
@@ -37,101 +43,16 @@
         </div>
         <br>
         <div class="moodbuttoncont">
-          <button class="moodbutton" onclick="moveleft()">Click Me</button> 
-          <button class="moodbutton" onclick="moveright()">Click Me</button> 
+          <button class="moodbutton" onclick="moveleft()"><</button> 
+          <p class="paragraph-article choicetext" id="moodexplain">Bababui</p>
+          <button class="moodbutton" onclick="moveright()">></button> 
         </div>
       </div>
-      
-      <script>
-      // function move() {
-      //   var elem = document.getElementById("myBar");   
-      //   var width = 1;
-      //   var id = setInterval(frame, 10);
-      //   function frame() {
-      //     if (width >= 100) {
-      //       clearInterval(id);
-      //     } else {
-      //       width++; 
-      //       elem.style.width = width + '%'; 
-      //     }
-      //   }
-      // }
-      var barset = 5;
-
-      function applybar() {
-        var elem = document.getElementById("myBar");
-        
-        if (barset == 0) {
-          elem.style.width = "2%";
-        }
-
-        if (barset == 1) {
-          elem.style.width = "10%";
-        }
-
-        if (barset == 2) {
-          elem.style.width = "20%";
-        }
-
-        if (barset == 3) {
-          elem.style.width = "30%";
-        }
-
-        if (barset == 4) {
-          elem.style.width = "40%";
-        }
-
-        if (barset == 5) {
-          elem.style.width = "50%";
-        }
-        
-        if (barset == 6) {
-          elem.style.width = "60%";
-        }
-
-        if (barset == 7) {
-          elem.style.width = "70%";
-        }
-
-        if (barset == 8) {
-          elem.style.width = "80%";
-        }
-
-        if (barset == 9) {
-          elem.style.width = "90%";
-        }
-
-        if (barset == 10) {
-          elem.style.width = "100%";
-        }
-      }
-
-      function moveleft() {
-        if (barset > 0) {
-          barset = barset - 1;
-          applybar();
-        }  
-
-        console.log(barset);
-
-      }
-
-      function moveright() {
-        if (barset < 11) {
-          barset = barset + 1;
-          applybar();
-        }  
-
-        console.log(barset);
-
-      }
-      </script>
         <div class="videos-cont">
             <p class="paragraph-article">Bruh</p>
             <p class="paragraph-article" id="msg"></p>
-            <p class="paragraph-article" id="greet"></p>
       </div>
-      <footer class="footers">
+      <footer class="footers" style="position: absolute;">
         <h6 class="footer-text">Justiks 2023</h6>
       </footer>
 
@@ -170,7 +91,8 @@
         window.addEventListener( 'load', CheckCred);
         SignoutBtn.addEventListener('click', Signout);
       </script>
+      <script src="js/bar-custom.js"></script>
+      <script src="js/test.js"></script>
     </body>
 </html>
 
-<script src="js/test.js"></script>
