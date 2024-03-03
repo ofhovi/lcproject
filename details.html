@@ -14,6 +14,23 @@
     <script src="js/logo-anim.js"></script>
   </head>
   <body>
+    <div class="backgroundue">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+   </div>
+   <div class="whitething">
+    <p class="invisiblenum" id="invisiblenum">Neutral</p>
+   </div>
     <div class="nav-bar">
       <div class="empty-space"></div>
       <a href="home.html" class="main-nav-logo"><img  alt="Logo" class="logo-image" id="img1" src="images/looogo.png" onmouseover="changeImg1()" onmouseout="changeImg2()"></a>
@@ -33,33 +50,58 @@
       <div class="main">
         <h1 class="title-article title-new">Personal mood log</h1>
         <div class="welcomecab">
-          <p class="paragraph-article" id="greet"></p>
-          
+          <p class="paragraph-article greetings" id="greet"></p>
         </div>
-        <div class="bar-container">
-          <div class="barback">
-            <div id="myBar" class="barfront"></div>
-          </div>
-        </div>
-        <br>
-        <div class="moodbuttoncont">
-          <button class="moodbutton" onclick="moveleft()"><</button> 
-          <p class="paragraph-article choicetext" id="moodexplain">Bababui</p>
-          <button class="moodbutton" onclick="moveright()">></button> 
-        </div>
+        <div id="moodchecksec" class="moodchecksec">
+             <div class="bar-container">
+              <div class="barback">
+                <div id="myBar" class="barfront"></div>
+              </div>
+            </div>
+            <br>
+            <div class="moodbuttoncont">
+              <button class="moodbutton" onclick="moveleft()"><</button> 
+                <div class="submoodcont">
+                  <p class="paragraph-article choicetext" id="moodexplain1">5</p>
+                  <hr style="color: #1B365C;">
+                  <p class="paragraph-article choicetext" id="moodexplain">Neutral</p>
+                </div>
+              <button class="moodbutton" onclick="moveright()">></button> 
+            </div>
+            <div class="moodbuttoncont">
+              <button id="showhidebutton" class="submibuttonmood" onclick="movetodesc()">Continue</button>
+            </div>
       </div>
-        <div class="videos-cont">
+      <div class="moodchecksec1 hide" id="moodchecksec1">
+        <p class="paragraph-article greetings">Describe your mood</p>
+        <div class="moodbuttoncont">
+          <button id="showhidebutton" class="submibuttonmood" onclick="movetorate()" style="margin-top: 0; margin-bottom: 40px; scale: 0.7;"><  Go back</button>
+        </div>
+        <textarea class="describemoodinp" rows="6" cols="55" id="notestothemood"></textarea>
+        <form class="moodbuttoncont" id="moodbuttonsubmit">
+          <button class="submibuttonmood" type="submit">Submit</button>
+        </form>
+      </div>
+        <!-- <div class="videos-cont">
             <p class="paragraph-article">Bruh</p>
             <p class="paragraph-article" id="msg"></p>
-      </div>
-      <footer class="footers" style="position: absolute;">
-        <h6 class="footer-text">Justiks 2023</h6>
+      </div> -->
+      <footer class="footers" style="position: fixed; bottom: 0;">
+        <h6 class="footer-text">Justiks 2024</h6>
       </footer>
 
+
+      <script>
+
+
+
+
+
+      </script>
       <script>
         let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
         let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
-        let UserId = sessionStorage.getItem("user-id");
+        let UserId = JSON.parse(sessionStorage.getItem("user-id"));
 
         let MsgHead = document.getElementById('msg');
         let GreetHead  = document.getElementById('greet');
@@ -68,14 +110,14 @@
         // MsgHead.innerText = `User with email "${UserCreds.email}" logged in`;
         // GreetHead.innerText = `Welcome ${UserInfo.firstname + " " + UserInfo.lastname}`;
 
-        let Signout = ()=> {
+        let Signout = () => {
             sessionStorage.removeItem("user-creds");
             sessionStorage.removeItem("user-info");
             sessionStorage.removeItem("user-id")
             window.location.href='login.html';
         }
 
-        let CheckCred = ()=>{
+        let CheckCred = () =>{
             if (!sessionStorage.getItem("user-creds")) {
                 window.location.href = "login.html";
             }
@@ -83,7 +125,7 @@
                 
 
             else {
-                MsgHead.innerText = `User with email "${UserCreds.email}" and Id: ${UserId} logged in`;
+                // MsgHead.innerText = `User with email "${UserCreds.email}" and Id: ${UserId} logged in`;
                 GreetHead.innerText = `Welcome ${UserInfo.firstname + " " + UserInfo.lastname}`;
             }
         }
@@ -91,8 +133,11 @@
         window.addEventListener( 'load', CheckCred);
         SignoutBtn.addEventListener('click', Signout);
       </script>
+
+      <script type="module" src="js/moodlog.js"></script>
       <script src="js/bar-custom.js"></script>
       <script src="js/test.js"></script>
+      <script src="js/showhide.js"></script>
     </body>
 </html>
 

@@ -16,15 +16,23 @@
       async function applybar() {
         var elem = document.getElementById("myBar");
         var textvar = document.getElementById("moodexplain");
+        var numvar = document.getElementById("moodexplain1");
         
         if (barset == 0) {
-          elem.style.width = "2%";
+          elem.style.width = "5%";
           textvar.style.opacity = "0";
           // textvar.innerText = "Very depressed";
           setTimeout(function() {
             textvar.innerText = "Very depressed";
             textvar.style.opacity = "1";
           }, 200);
+
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "0";
+            numvar.style.opacity = "1";
+          }, 200)
+
           // textvar.style.opacity = "1";
 
         }
@@ -41,7 +49,12 @@
             textvar.style.opacity = "1";
           }, 200);
           }
-          
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "1";
+            numvar.style.opacity = "1";
+          }, 200)
+
           
         }
 
@@ -62,6 +75,13 @@
             textvar.style.opacity = "1";
           }, 200);
           }
+
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "2";
+            numvar.style.opacity = "1";
+          }, 200)
+
           
         }
 
@@ -77,7 +97,12 @@
             textvar.style.opacity = "1";
           }, 200);
           }
-          
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "3";
+            numvar.style.opacity = "1";
+          }, 200)
+
         }
 
         if (barset == 4) {
@@ -93,16 +118,28 @@
           }, 200);
           }
           
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "4";
+            numvar.style.opacity = "1";
+          }, 200)
+
         }
 
         if (barset == 5) {
-          elem.style.width = "50%";
+          elem.style.width = "55%";
           textvar.style.opacity = "0";
           setTimeout(function() {
             textvar.innerText = "Neutral";
             textvar.style.opacity = "1";
           }, 200);
           
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "5";
+            numvar.style.opacity = "1";
+          }, 200)
+
         }
         
         if (barset == 6) {
@@ -123,6 +160,12 @@
           }, 200);
           }
           
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "6";
+            numvar.style.opacity = "1";
+          }, 200)
+
         }
 
         if (barset == 7) {
@@ -138,6 +181,12 @@
           }, 200);
           }
           
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "7";
+            numvar.style.opacity = "1";
+          }, 200)
+
         }
 
         if (barset == 8) {
@@ -158,6 +207,12 @@
           }, 200);
           }
           
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "8";
+            numvar.style.opacity = "1";
+          }, 200)
+
         }
 
         if (barset == 9) {
@@ -173,6 +228,12 @@
           }, 200);
           }
           
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "9";
+            numvar.style.opacity = "1";
+          }, 200)
+
         }
 
         if (barset == 10) {
@@ -183,6 +244,12 @@
             textvar.style.opacity = "1";
           }, 200);
           
+          numvar.style.opacity = "0";
+          setTimeout(function() {
+            numvar.innerText = "10";
+            numvar.style.opacity = "1";
+          }, 200)
+
         }
       }
 
@@ -197,7 +264,7 @@
       }
 
       function moveright() {
-        if (barset < 11) {
+        if (barset < 10) {
           barset = barset + 1;
           applybar();
         }  
