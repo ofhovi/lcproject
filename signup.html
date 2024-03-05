@@ -37,6 +37,14 @@
         <span></span>
         <span></span>
      </div>
+     <div class="alertbox" id="alertbox">
+      <div class="alertboxcont">
+        <p class="alerttext">Please fill in all fields correctly</p>
+        <form id="alertform" class="alertform">
+        <button class="button-apply alertbutton" type="submit">Okay</button>
+        </form>
+      </div>
+     </div>
       <div class="nav-bar">
         <div class="empty-space"></div>
         <a href="home.html" class="main-nav-logo"><img  alt="Logo" class="logo-image" id="img1" src="images/looogo.png" onmouseover="changeImg1()" onmouseout="changeImg2()"></a>
@@ -68,7 +76,9 @@
                 <p class="logintext1">Already a user?<a  class="logintext1" href="login.html"><u>Sign in</u></a></p>
                 
             </div>
-            <button id="buttonsubmit" type="submit" class="button-apply">Submit</button>
+            <div class="maybebutton">
+              <button id="buttonsubmit" type="submit" class="button-apply buton">Submit</button>
+            </div>
             <!-- <button onclick="validateForm()" type="submit" class="button-apply">Submit</button> -->
           </div>
         </form>

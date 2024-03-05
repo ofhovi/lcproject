@@ -28,32 +28,63 @@
             let FnameInp = document.getElementById('firstName');
             let LnameInp = document.getElementById('lastName');
             let MainForm = document.getElementById('MainForm');
+            let ButtonProp = document.getElementById('buttonsubmit');
+
+            let alertbox = document.getElementById("alertbox");
+            let alertform = document.getElementById('alertform');
 
 
             let RegisterUser = evt => {
                 evt.preventDefault();
 
-
+                ButtonProp.classList.add("process");
                 createUserWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
                 .then(async (credentials)=> {
+                    
                     var ref = doc(db, "UserAuthList", credentials.user.uid);
                     await setDoc(ref, {
                         firstname: FnameInp.value,
                         lastname: LnameInp.value
-                    })
+                    });
+                    alert('Account Created Successfully! Please Login Now')
+                    window.location.href='login.html';
+                    
                 })
                 .catch((error)=>{
-                    alert(error.message);
+                    // alert(error.message);
                     console.log(error.code);
                     console.log(error.message);
+                    ButtonProp.classList.remove("process");
+                    alertbox.style.zIndex = "10";
+                    setTimeout(function() {
+                        alertbox.style.opacity = "1";
+                    }, 200);
                 })
             }
+
+
+            let CheckCred = () =>{
+                if (sessionStorage.getItem("user-creds")) {
+                    window.location.href = "details.html";
+                }
+            }
+
+
+            let CloseAlert = evt =>{
+                evt.preventDefault();
+                alertbox.style.opacity = "0";
+                setTimeout(function(){
+                    alertbox.style.zIndex = "-2";
+                    }, 400);
+                    }
 
             // const button1 = document.getElementById('buttonsubmit');
             
             // button1.addEventListener("click", RegisterUser); 
             
-            MainForm.addEventListener( 'submit', RegisterUser )
+            MainForm.addEventListener( 'submit', RegisterUser );
+            window.addEventListener( 'load', CheckCred);
+            alertform.addEventListener('submit', CloseAlert);
 
               
     

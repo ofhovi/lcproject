@@ -23,13 +23,14 @@
             let EmailInp = document.getElementById('emailAddress');
             let PassInp = document.getElementById('password');
             let MainForm = document.getElementById('MainForm');
+            let ButtonProp = document.getElementById('buttonsubmit');
 
             const buttonsubmit = document.getElementById('buttonsubmit');
 
             let SignInUser = evt => {
                 evt.preventDefault();
 
-
+                ButtonProp.classList.add("process");
                 signInWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
                 .then(async (credentials)=> {
                     var ref = doc(db, "UserAuthList", credentials.user.uid);
@@ -50,12 +51,20 @@
                     alert(error.message);
                     console.log(error.code);
                     console.log(error.message);
+                    ButtonProp.classList.remove("process");
                 })
+            }
+
+            let CheckCred = () =>{
+                if (sessionStorage.getItem("user-creds")) {
+                    window.location.href = "details.html";
+                }
             }
 
             // const button1 = document.getElementById('buttonsubmit');
 
             // button1.addEventListener("click", SignInUser);
 
-            MainForm.addEventListener( 'submit', SignInUser )
+            MainForm.addEventListener( 'submit', SignInUser );
+            window.addEventListener( 'load', CheckCred);
             
