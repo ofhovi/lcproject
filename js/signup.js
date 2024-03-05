@@ -32,6 +32,8 @@
 
             let alertbox = document.getElementById("alertbox");
             let alertform = document.getElementById('alertform');
+            let sucalertbox = document.getElementById("alertbox1");
+            let sucalertform = document.getElementById('alertform1');
 
 
             let RegisterUser = evt => {
@@ -46,8 +48,12 @@
                         firstname: FnameInp.value,
                         lastname: LnameInp.value
                     });
-                    alert('Account Created Successfully! Please Login Now')
-                    window.location.href='login.html';
+                    // alert('Account Created Successfully! Please Login Now')
+                    // window.location.href='login.html';
+                    sucalertbox.style.zIndex = "10";
+                    setTimeout(function() {
+                        sucalertbox.style.opacity = "1";
+                    }, 200);
                     
                 })
                 .catch((error)=>{
@@ -76,8 +82,16 @@
                 setTimeout(function(){
                     alertbox.style.zIndex = "-2";
                     }, 400);
-                    }
+            }
 
+            let CloseAlert1 = evt => {
+                evt.preventDefault();
+                window.location.href='login.html';
+                
+            }
+
+
+            
             // const button1 = document.getElementById('buttonsubmit');
             
             // button1.addEventListener("click", RegisterUser); 
@@ -85,6 +99,7 @@
             MainForm.addEventListener( 'submit', RegisterUser );
             window.addEventListener( 'load', CheckCred);
             alertform.addEventListener('submit', CloseAlert);
+            sucalertform.addEventListener('submit', CloseAlert1);
 
               
     

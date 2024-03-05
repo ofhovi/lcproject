@@ -48,10 +48,14 @@
                         }
                     })
                 .catch((error)=>{
-                    alert(error.message);
+                    // alert(error.message);
                     console.log(error.code);
                     console.log(error.message);
                     ButtonProp.classList.remove("process");
+                    alertbox.style.zIndex = "10";
+                    setTimeout(function() {
+                        alertbox.style.opacity = "1";
+                    }, 200);
                 })
             }
 
@@ -61,10 +65,19 @@
                 }
             }
 
+            let CloseAlert = evt =>{
+                evt.preventDefault();
+                alertbox.style.opacity = "0";
+                setTimeout(function(){
+                    alertbox.style.zIndex = "-2";
+                    }, 400);
+            }
+
             // const button1 = document.getElementById('buttonsubmit');
 
             // button1.addEventListener("click", SignInUser);
 
             MainForm.addEventListener( 'submit', SignInUser );
             window.addEventListener( 'load', CheckCred);
+            alertform.addEventListener('submit', CloseAlert);
             
