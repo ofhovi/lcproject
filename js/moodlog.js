@@ -17,7 +17,7 @@ const db = getFirestore();
 // const docRef = db.collection("UserAuthList").doc(UserId).collection("Mood State").doc("02.03"); 
 
 let MainForm = document.getElementById('moodbuttonsubmit');
-let moodval = barset;
+let moodval = document.getElementById('invisiblenum1');
 let moodword = document.getElementById("invisiblenum");
 let moodnotes = document.getElementById("notestothemood");
 
@@ -57,10 +57,12 @@ let CreateMoodState = evt => {
     // console.log(dateString2);
     // console.log(dataGen);
     // console.log(moodword.innerText);
+    // // console.log(moodState);
+    // console.log(moodval.innerText);
     
     var ref = doc(db, "UserAuthList", UserId, "Mood state", dateComb);
       setDoc(ref, {
-        moodlvl: moodval,
+        moodlvl: moodval.innerText,
         moodState: moodword.innerText,
         moodNotes: moodnotes.value,
         date: utcDaystring,

@@ -4,7 +4,11 @@ const block1 = document.getElementById("moodchecksec1");
 
 let moodword = document.getElementById("moodexplain");
 
+let moodnummm = document.getElementById("moodexplain1");
+
 let mooddummy = document.getElementById("invisiblenum");
+
+let mooddummy1 = document.getElementById("invisiblenum1");
 
 block1.style.visibility = "hidden";
 block1.style.opacity = "0";
@@ -14,6 +18,7 @@ block1.style.opacity = "0";
 
 function movetodesc() {
     mooddummy.innerText = moodword.innerText;
+    mooddummy1.innerText = moodnummm.innerText;
     // block.style.display = "none";
     block.style.visibility = "hidden";
     block.style.opacity = "0";
