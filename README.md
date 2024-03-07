@@ -9,3 +9,5 @@ Create a graph that will show the mood rate changing through time
 Create a variable of the average mood state in the past 30 DAYS (not logs) and make a conclusion e.g. "Your average mood is Sad or 2.4. You should probably go to the therapist"
 
 Css update to support small screens with flex direction column 
+
+microbit support using python
