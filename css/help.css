@@ -242,7 +242,7 @@ dd:nth-child(22) {
   .nav-bar-text {
     margin-top: auto;
     margin-bottom: auto; 
-    width: 110px;
+    /* width: 110px; */
     height: 80px;
     text-align: center;
     display: flex;

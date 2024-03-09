@@ -20,10 +20,12 @@ let MainForm = document.getElementById('moodbuttonsubmit');
 let moodval = document.getElementById('invisiblenum1');
 let moodword = document.getElementById("invisiblenum");
 let moodnotes = document.getElementById("notestothemood");
+let ButtonProp = document.getElementById('buttonsubmit');
 
 let CreateMoodState = evt => {
   evt.preventDefault();
 
+  ButtonProp.classList.add("process");
   const now = new Date();
   const utcDate = now.toUTCString();
      // Extract the UTC hours and minutes
@@ -72,7 +74,12 @@ let CreateMoodState = evt => {
         minute: utcMinutes,
         timestamp: dataGen
       });
-    console.log("Success");
+    
+    setTimeout( function() {
+      console.log("Success");
+      window.location.href = "loghistory.html";
+    }, 2000);
+   
 }
 
 

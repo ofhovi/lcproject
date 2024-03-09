@@ -28,7 +28,7 @@
       <span></span>
       <span></span>
    </div>
-   <div class="whitething" style="height: 150%;">
+   <div class="whitething" style="height: 200%;">
     <p class="invisiblenum" id="invisiblenum">Neutral</p>
     <p class="invisiblenum" id="invisiblenum1">5</p>
    </div>
@@ -50,13 +50,34 @@
     </div>
       <div class="main">
         <h1 class="title-article title-new" style="margin-top: 0px;">Personal mood log</h1>
-        <div class="welcomecab">
-          <p class="paragraph-article greetings" id="greet" style="margin-bottom: 0px;"></p>
-        </div>
         <div class="buttonswitchpage" style="display: flex; width: 60%; justify-content: center; margin-left: 20%; margin-right: 20%;">
-          <a class="submibuttonmood" href="loghistory.html" style="margin-top: 0; margin-bottom: 40px; scale: 0.7; width: 30%; text-align: center;">Go to log history</a>
+        <a class="submibuttonmood" href="details.html" style="margin-top: 0; margin-bottom: 40px; scale: 0.7; width: 30%; text-align: center;">Go to log mood</a>
+      </div>
+        <div class="welcomecab">
+          <p class="paragraph-article greetings" id="greet"></p>
         </div>
-        <div id="moodchecksec" class="moodchecksec">
+        <div class="logsection">
+        <form class="listmaybe" id="theexactlist">
+            <!-- <ul class="listlistmaybe" id="loglist"></ul> -->
+            <!-- <div class="theexactlist" ></div> -->
+        </form>
+        <div class="lognotes">
+          <p class="title-article title-new title-log" id="lognotestitle">Please choose a date</p>
+          <p class="lognotestext" id="lognotestext"></p>
+        </div>
+      </div>
+      <canvas class="mychartlog" id="myChart" style="width: 58%; height: 400px;"></canvas>
+      <div class="welcomecab">
+        <p class="paragraph-article greetings" id="moodave"></p>
+      </div>
+      <div class="welcomecab">
+        <p class="paragraph-article greetings" id="moodrec"></p>
+      </div>
+
+
+
+
+        <!-- <div id="moodchecksec" class="moodchecksec">
              <div class="bar-container">
               <div class="barback">
                 <div id="myBar" class="barfront"></div>
@@ -83,9 +104,9 @@
         </div>
         <textarea class="describemoodinp" rows="6" cols="55" id="notestothemood"></textarea>
         <form class="moodbuttoncont" id="moodbuttonsubmit">
-          <button class="submibuttonmood" type="submit" id="buttonsubmit" style="height: 60px;">Submit</button>
+          <button class="submibuttonmood" type="submit">Submit</button>
         </form>
-      </div>
+      </div> -->
         <!-- <div class="videos-cont">
             <p class="paragraph-article">Bruh</p>
             <p class="paragraph-article" id="msg"></p>
@@ -93,6 +114,9 @@
       <footer class="footers" style="position: fixed; bottom: 0;">
         <h6 class="footer-text">Justiks 2024</h6>
       </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
 
 
       <script>
@@ -138,10 +162,12 @@
         SignoutBtn.addEventListener('click', Signout);
       </script>
 
-      <script type="module" src="js/moodlog.js"></script>
+      <script type="module" src="js/moodread.js"></script>
       <script src="js/bar-custom.js"></script>
       <script src="js/test.js"></script>
-      <script src="js/showhide.js"></script>
+      <script src="js/moodupdate.js"></script>
+      <script src="js/moodchart.js" type="module"></script>
+      <!-- <script src="js/showhide.js"></script> -->
     </body>
 </html>
 
