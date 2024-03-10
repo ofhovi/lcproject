@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <!-- <link rel="stylesheet" href="css/nav-bar.css"> -->
-    <title>About us</title>
+    <title>My log</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
       <span></span>
       <span></span>
    </div>
-   <div class="whitething" style="height: 200%;">
+   <div class="whitething" style="height: 220%;">
     <p class="invisiblenum" id="invisiblenum">Neutral</p>
     <p class="invisiblenum" id="invisiblenum1">5</p>
    </div>
@@ -73,7 +73,25 @@
       <div class="welcomecab">
         <p class="paragraph-article greetings" id="moodrec"></p>
       </div>
-
+      <div class="welcomecab optionalquiz" id="moodblock">
+        <p class="paragraph-article greetings" id="moodworry"></p>
+        <div class="quizbuttons">
+          <button type="button" class="submibuttonmood quizbutton" onclick="yesquiz()">Yes</button>
+          <button type="button" class="submibuttonmood quizbutton" onclick="noquiz()">No</button>
+        </div>  
+      </div>
+      <div class="welcomecab optionalquiz" style="opacity: 0;" id="moodblock1">
+        <p class="paragraph-article greetings">How long have you been feeling depressed?</p>
+        <div class="quizbuttons">
+          <button type="button" class="submibuttonmood quizbutton" onclick="quiz1()">Couple of days</button>
+          <button type="button" class="submibuttonmood quizbutton" onclick="quiz2()">Few weeks</button>
+          <button type="button" class="submibuttonmood quizbutton" onclick="quiz3()">Few months</button>
+        </div>  
+      </div>
+      <div class="welcomecab optionalquiz" style="opacity: 0;" id="moodblock2">
+        <p class="paragraph-article greetings" id="moodconcl"></p>
+        <a class="submibuttonmood" href="https://www2.hse.ie/mental-health/">HSE Mental Health Help</a>
+      </div>
 
 
 
@@ -116,16 +134,7 @@
       </footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
       <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-
-
-
-      <script>
-
-
-
-
-
-      </script>
+      <script src="js/moodquiz.js"></script>
       <script>
         let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
         let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));

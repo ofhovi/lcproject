@@ -38,6 +38,8 @@ querySnapshot.forEach((doc) => {
 
 const moodave = document.getElementById('moodave');
 const moodrec = document.getElementById('moodrec');
+const moodworry = document.getElementById('moodworry');
+const moodblock = document.getElementById('moodblock');
 
 setTimeout( function () {
     date.reverse();
@@ -82,7 +84,9 @@ setTimeout( function () {
     moodave.textContent = `Your average mood value is ${fixave}`
 
     if (fixave < 4) {
-        moodrec.textContent = "Your average mood value is too low. You may need to see a psychologist!"
+        moodrec.textContent = "Your average mood value is too low.";
+        moodworry.textContent = "Have you been feeling depressed lately?";
+        moodblock.style.scale = "1";
     }
 
     if (fixave >= 4) {
@@ -91,7 +95,7 @@ setTimeout( function () {
     }
 
     if (fixave >= 8) {
-        moodrec.textContent = "Your average mood value is excellent. Keep enjoying life like this!"
+        moodrec.textContent = "Your average mood value is excellent. Keep enjoying life like this!";
     }
 
     // const data = {
